@@ -24,10 +24,3 @@ class UserInput:
     email: str = ""
     full_name: str = ""
     token: str = ""
-
-    def __init__(self, dict):
-        self.__dict__ = dict
-
-    @staticmethod
-    def parse_obj(dict):
-        return User(dict=dict)

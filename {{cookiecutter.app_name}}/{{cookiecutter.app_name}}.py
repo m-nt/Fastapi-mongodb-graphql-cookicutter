@@ -10,11 +10,6 @@ from models.Datatypes import *
 from models.Schemas import *
 from tools.resolvers import *
 
-# to get a string like this run:
-# openssl rand -hex 32
-SECRET_KEY = "{{cookiecutter.secret_key}}"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
@@ -36,7 +31,7 @@ class Mutaion:
     pass
 
 
-schema = strawberry.Schema(Query)
+schema = strawberry.Schema(Query, mutation=Mutaion)
 
 graphql_app = GraphQLRouter(schema)
 
