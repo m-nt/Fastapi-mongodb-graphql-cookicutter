@@ -1,0 +1,7 @@
+FROM python:3
+WORKDIR /{{cookiecutter.app_name}}
+COPY requirements.txt requirements.txt
+RUN pip3 install --upgrade pip
+RUN pip3 install requirements.txt
+COPY . /{{cookiecutter.app_name}}
+EXPOSE 8000

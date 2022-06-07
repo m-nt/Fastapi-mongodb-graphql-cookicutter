@@ -1,0 +1,6 @@
+fastapi[all]
+motor
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
+strawberry-graphql[fastapi]
