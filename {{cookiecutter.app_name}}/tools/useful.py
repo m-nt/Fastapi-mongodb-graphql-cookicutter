@@ -13,7 +13,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 async def check_if_loggin(
     client: motor.motor_asyncio.AsyncIOMotorClient, token: str
 ) -> bool:
-    db = client["{{cookiecutter.app_name}}"]
+    db = client["twatter"]
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username: str = payload.get("sub")
