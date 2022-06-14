@@ -7,7 +7,7 @@ from models.Datatypes import *
 from tools.useful import *
 
 client = motor.motor_asyncio.AsyncIOMotorClient(os.getenv("MONGODB_URL"))
-db = client["{{cookiecutter.app_name}}"]
+db = client["twatter"]
 
 
 async def get_users(self, token: Union[str, None] = "") -> Schema:
